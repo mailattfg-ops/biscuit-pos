@@ -348,8 +348,8 @@ footer .logo-pos {
 
 .sticky-viewport {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 80px;
+  height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;
