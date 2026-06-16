@@ -1195,10 +1195,10 @@ footer .logo-pos {
 }
 
 .features-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 370px));
   gap: 30px;
+  justify-content: center;
 }
 
 .feature-card {
@@ -1692,8 +1692,10 @@ footer {
   .download-cta h2 {
     font-size: 1.85rem;
   }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
   .feature-card {
-    flex: 1 1 100%;
     width: 100%;
     padding: 30px 20px;
   }
