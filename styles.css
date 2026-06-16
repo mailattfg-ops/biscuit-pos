@@ -1582,6 +1582,9 @@ footer {
     height: auto;
     padding: 0 24px;
   }
+  .badge-row {
+    justify-content: center;
+  }
   .simulator-wrapper {
     transform: none !important;
     opacity: 1 !important;
@@ -1662,11 +1665,56 @@ footer {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .footer-brand {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .info-img-card {
+    padding: 15px;
+  }
   .hero-title {
     font-size: 2.5rem;
   }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.05rem;
+  }
   .download-cta h2 {
-    font-size: 2rem;
+    font-size: 1.85rem;
+  }
+  .feature-card {
+    flex: 1 1 100%;
+    width: 100%;
+    padding: 30px 20px;
+  }
+  .device-frame {
+    width: 290px;
+    height: 590px;
+    border-radius: 32px;
+    border-width: 8px;
+  }
+  .device-notch {
+    width: 80px;
+    height: 20px;
+    border-radius: 10px;
+  }
+  .app-banner {
+    padding: 12px 16px;
+  }
+  .app-card {
+    padding: 14px;
+  }
+  .app-grid {
+    gap: 12px;
   }
 }
