@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiscuitPOS - Minimal Mobile POS for Bakeries & Restaurants</title>
+  <meta name="description" content="Supercharge your bakery, cafe, or restaurant business with BiscuitPOS. Easily manage tables, generate bills, view reports, and handle operations right from your phone.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cmask id='m'%3E%3Crect width='40' height='40' fill='white'/%3E%3Ccircle cx='33' cy='13' r='7' fill='black'/%3E%3Ccircle cx='33' cy='23' r='7' fill='black'/%3E%3Ccircle cx='35' cy='18' r='6' fill='black'/%3E%3C/mask%3E%3Ccircle cx='18' cy='18' r='16' fill='%23B07D50' mask='url(%23m)'/%3E%3Ccircle cx='10' cy='14' r='1.5' fill='%235D3A1B'/%3E%3Ccircle cx='12' cy='22' r='1.5' fill='%235D3A1B'/%3E%3Ccircle cx='18' cy='11' r='1.5' fill='%235D3A1B'/%3E%3Ccircle cx='21' cy='24' r='1.5' fill='%235D3A1B'/%3E%3Ccircle cx='23' cy='17' r='1.5' fill='%235D3A1B'/%3E%3Ccircle cx='15' cy='17' r='1.5' fill='%235D3A1B'/%3E%3Ccircle cx='36' cy='10' r='1' fill='%23B07D50'/%3E%3Ccircle cx='37' cy='22' r='1' fill='%23B07D50'/%3E%3Ccircle cx='38' cy='16' r='0.75' fill='%23B07D50'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <svg class="logo-svg" width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <mask id="bite-mask-header">
+            <rect width="40" height="40" fill="white"/>
+            <circle cx="33" cy="13" r="7" fill="black"/>
+            <circle cx="33" cy="23" r="7" fill="black"/>
+            <circle cx="35" cy="18" r="6" fill="black"/>
+          </mask>
+          <circle cx="18" cy="18" r="16" fill="#B07D50" mask="url(#bite-mask-header)"/>
+          <circle cx="10" cy="14" r="1.5" fill="#5D3A1B"/>
+          <circle cx="12" cy="22" r="1.5" fill="#5D3A1B"/>
+          <circle cx="18" cy="11" r="1.5" fill="#5D3A1B"/>
+          <circle cx="21" cy="24" r="1.5" fill="#5D3A1B"/>
+          <circle cx="23" cy="17" r="1.5" fill="#5D3A1B"/>
+          <circle cx="15" cy="17" r="1.5" fill="#5D3A1B"/>
+          <circle cx="36" cy="10" r="1" fill="#B07D50"/>
+          <circle cx="37" cy="22" r="1" fill="#B07D50"/>
+          <circle cx="38" cy="16" r="0.75" fill="#B07D50"/>
+        </svg>
+        <span class="logo-text">Biscuit<span class="logo-pos">POS</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#scroll-story" class="active">Product Story</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#security">Privacy-first</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="#download" class="btn btn-primary btn-sm">Get App</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Apple-Style Sticky Scroll Story Container -->
+  <section class="scroll-story-container" id="scroll-story">
+    <div class="sticky-viewport">
+      
+      <!-- Hero Section inside Sticky -->
+      <div class="hero-sticky-grid">
+        <div class="hero-text-content">
+          <div class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Sleek & Simple Mobile POS
+          </div>
+          <h1 class="hero-title">The Complete POS<br>that fits in your <span>pocket.</span></h1>
+          <p class="hero-desc">BiscuitPOS delivers table layouts, fast billing, and revenue tracking inside a beautiful, lightweight mobile app. No hardware clutters, no servers required.</p>
+          
+          <div class="badge-row">
+            <a href="#" class="download-badge">
+              <svg viewBox="0 0 24 24">
+                <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.75.8.01 1.98-.77 3.56-.63 1.6.14 2.81.79 3.53 1.89-3.28 2-2.5 6.47.67 7.79-.67 1.7-1.46 3.4-2.84 3.17zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.22 2.5-2.11 4.42-3.74 4.25z"/>
+              </svg>
+              <div class="badge-text">
+                <span>Download on the</span>
+                <span>App Store</span>
+              </div>
+            </a>
+            <a href="#" class="download-badge">
+              <img src="google-play-icon.png" alt="Google Play">
+              <div class="badge-text">
+                <span>Get it on</span>
+                <span>Google Play</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="scroll-indicator-hint">
+            <span>Scroll to explore features</span>
+            <div class="mouse-icon"><div class="wheel"></div></div>
+          </div>
+        </div>
+
+        <!-- Centering/Animating Simulator Wrapper -->
+        <div class="simulator-wrapper">
+          <div class="device-frame">
+            <div class="device-notch"></div>
+            
+            <!-- Screen 1: Home -->
+            <div class="app-screen" id="screen-home">
+              <div class="app-header">
+                <div class="app-title-row">
+                  <h3>Restaurant POS</h3>
+                  <div class="privacy-toggle">
+                    <span>Privacy ON</span>
+                    <div class="app-switch active"></div>
+                  </div>
+                </div>
+                <p>Manage your restaurant operations</p>
+              </div>
+              
+              <div class="app-content">
+                <div class="app-banner" id="banner-new-bill">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  <span>New Bill</span>
+                </div>
+                
+                <div class="app-banner green" id="banner-menu-management">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                  <span>Menu Management</span>
+                </div>
+                
+                <div class="app-stats-grid">
+                  <div class="app-stat-card">
+                    <div class="app-stat-label">Today's Orders</div>
+                    <div class="app-stat-value">12</div>
+                  </div>
+                  <div class="app-stat-card">
+                    <div class="app-stat-label">Total Revenue</div>
+                    <div class="app-stat-value">₹4,190.00</div>
+                  </div>
+                  <div class="app-stat-card">
+                    <div class="app-stat-label">Weekly Sales</div>
+                    <div class="app-stat-value">₹24,500.00</div>
+                  </div>
+                  <div class="app-stat-card">
+                    <div class="app-stat-label">Monthly Sales</div>
+                    <div class="app-stat-value">₹98,400.00</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="app-nav">
+                <div class="app-nav-item active" data-screen="home">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  <span>Home</span>
+                </div>
+                <div class="app-nav-item" data-screen="bills">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
+                  <span>Bills</span>
+                </div>
+                <div class="app-nav-item" data-screen="orders">
+                  <div class="badge">1</div>
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  <span>Orders</span>
+                </div>
+                <div class="app-nav-item">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  <span>Reports</span>
+                </div>
+                <div class="app-nav-item" data-screen="settings">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                  <span>More</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 2: Bills -->
+            <div class="app-screen" id="screen-bills" style="display: none;">
+              <div class="app-header">
+                <div class="app-title-row">
+                  <h3>Bill & Tables</h3>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6c757d" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                </div>
+              </div>
+              
+              <div class="app-content">
+                <div class="app-tab-bar">
+                  <div class="app-tab active">Dine-in</div>
+                  <div class="app-tab">Parcel</div>
+                </div>
+                
+                <p style="font-size: 0.8rem; font-weight: 700; color: #495057; margin-bottom: 4px;">Select a table</p>
+                
+                <div class="table-grid">
+                  <div class="table-card">
+                    <div class="table-name">Table 1</div>
+                    <span class="table-status" style="color: #34a853;">Free</span>
+                    <div class="table-action">Tap to start order</div>
+                  </div>
+                  <div class="table-card billed">
+                    <div class="table-name">Table 2</div>
+                    <span class="table-status" style="color: #007bff;">Billed</span>
+                    <div class="table-bill-info">
+                      <span class="table-amount">₹15.00</span>
+                      <span class="table-items">1 items</span>
+                    </div>
+                    <button class="table-pay-btn">Pay Now</button>
+                  </div>
+                  <div class="table-card">
+                    <div class="table-name">Table 3</div>
+                    <span class="table-status" style="color: #34a853;">Free</span>
+                    <div class="table-action">Tap to start order</div>
+                  </div>
+                  <div class="table-card">
+                    <div class="table-name">Table 4</div>
+                    <span class="table-status" style="color: #34a853;">Free</span>
+                    <div class="table-action">Tap to start order</div>
+                  </div>
+                  <div class="table-card">
+                    <div class="table-name">Table 5</div>
+                    <span class="table-status" style="color: #34a853;">Free</span>
+                    <div class="table-action">Tap to start order</div>
+                  </div>
+                  <div class="table-card">
+                    <div class="table-name">Table 6</div>
+                    <span class="table-status" style="color: #34a853;">Free</span>
+                    <div class="table-action">Tap to start order</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="app-nav">
+                <div class="app-nav-item" data-screen="home">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  <span>Home</span>
+                </div>
+                <div class="app-nav-item active" data-screen="bills">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
+                  <span>Bills</span>
+                </div>
+                <div class="app-nav-item" data-screen="orders">
+                  <div class="badge">1</div>
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  <span>Orders</span>
+                </div>
+                <div class="app-nav-item">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  <span>Reports</span>
+                </div>
+                <div class="app-nav-item" data-screen="settings">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                  <span>More</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 3: Orders -->
+            <div class="app-screen" id="screen-orders" style="display: none;">
+              <div class="app-header">
+                <div class="app-title-row">
+                  <h3>Order History</h3>
+                </div>
+              </div>
+              
+              <div class="app-content">
+                <div class="app-tab-bar">
+                  <div class="app-tab active">All</div>
+                  <div class="app-tab">Dine-in</div>
+                  <div class="app-tab">Parcel</div>
+                </div>
+                <div class="app-tab-bar app-tab-sub">
+                  <div class="app-tab active">Pending (1)</div>
+                  <div class="app-tab">Paid</div>
+                  <div class="app-tab">All</div>
+                </div>
+                
+                <div class="order-card">
+                  <div class="order-header">
+                    <span class="order-id">ORD-1778940412</span>
+                    <div class="order-meta">
+                      <span class="order-table-badge">T2</span>
+                      <span class="order-status-badge">Pending</span>
+                    </div>
+                  </div>
+                  <div class="order-time">5/16/2026 7:36:51 PM &nbsp;🔒 Locked</div>
+                  <div class="order-items">
+                    <span>Tea x1</span>
+                    <span>₹15</span>
+                  </div>
+                  <div class="order-footer">
+                    <span class="order-total">Total: ₹15.00</span>
+                    <span class="order-paid-status">Paid ₹0.00 / ₹15.00</span>
+                  </div>
+                  <div class="order-actions">
+                    <button class="app-btn-sm print">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                      Print
+                    </button>
+                    <button class="app-btn-sm pay">Record Payment</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="app-nav">
+                <div class="app-nav-item" data-screen="home">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  <span>Home</span>
+                </div>
+                <div class="app-nav-item" data-screen="bills">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
+                  <span>Bills</span>
+                </div>
+                <div class="app-nav-item active" data-screen="orders">
+                  <div class="badge">1</div>
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  <span>Orders</span>
+                </div>
+                <div class="app-nav-item">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  <span>Reports</span>
+                </div>
+                <div class="app-nav-item" data-screen="settings">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                  <span>More</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 4: Menu Management -->
+            <div class="app-screen" id="screen-menu" style="display: none;">
+              <div class="app-header">
+                <div class="app-title-row">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="app-back-arrow" style="cursor: pointer; font-size: 1.2rem; font-weight: bold;">&lsaquo;</span>
+                    <h3>Menu Management</h3>
+                  </div>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6c757d" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                </div>
+              </div>
+              
+              <div class="app-content">
+                <div class="app-menu-list">
+                  <div class="app-menu-item">
+                    <div class="app-menu-img">
+                      <svg viewBox="0 0 40 40">
+                        <rect width="40" height="40" fill="#FFFBF6" rx="8"/>
+                        <path d="M 8 30 C 8 22, 14 10, 20 8 C 26 10, 32 22, 32 30 Z" fill="#ECA154"/>
+                        <path d="M 12 30 C 14 24, 20 16, 20 16 C 20 16, 26 24, 28 30" stroke="#CD7622" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <path d="M 16 30 C 18 26, 20 22, 20 22 C 20 22, 22 26, 24 30" stroke="#A7570D" stroke-width="1" fill="none" stroke-linecap="round"/>
+                        <path d="M 18 10 C 20 9, 21 9, 22 10" stroke="#FFF0D0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        <path d="M 8 30 C 15 31, 25 31, 32 30" stroke="#8A4807" stroke-width="1" fill="none"/>
+                      </svg>
+                    </div>
+                    <div class="app-menu-info">
+                      <div class="app-menu-name">Puffs</div>
+                      <div class="app-menu-cat">General</div>
+                      <div class="app-menu-price">₹25.0</div>
+                    </div>
+                    <div class="app-menu-actions">
+                      <button class="app-action-btn edit">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                      </button>
+                      <button class="app-action-btn delete">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div class="app-menu-item">
+                    <div class="app-menu-img">
+                      <svg viewBox="0 0 40 40">
+                        <rect width="40" height="40" fill="#F4FDF4" rx="8"/>
+                        <path d="M 14 10 L 16 32 C 16 34, 24 34, 24 32 L 26 10 Z" fill="#E1F7E1" opacity="0.6" stroke="#9AD39A" stroke-width="1"/>
+                        <path d="M 14.5 16 L 16 32 C 16 33.5, 24 33.5, 24 32 L 25.5 16 Z" fill="#CCF281"/>
+                        <circle cx="26" cy="10" r="5" fill="#8BC34A" stroke="#7CB342" stroke-width="1"/>
+                        <circle cx="26" cy="10" r="4.2" fill="#DCEDC8"/>
+                        <path d="M 26 10 L 26 6.5 M 26 10 L 26 13.5 M 26 10 L 22.5 10 M 26 10 L 29.5 10 M 26 10 L 23.5 7.5 M 26 10 L 28.5 12.5 M 26 10 L 23.5 12.5 M 26 10 L 28.5 7.5" stroke="#8BC34A" stroke-width="0.5"/>
+                        <line x1="18" y1="6" x2="21" y2="25" stroke="#FF5722" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M 15.5 12 L 17 30" stroke="#FFFFFF" stroke-width="0.75" opacity="0.8"/>
+                      </svg>
+                    </div>
+                    <div class="app-menu-info">
+                      <div class="app-menu-name">Lime</div>
+                      <div class="app-menu-cat">General</div>
+                      <div class="app-menu-price">₹15.0</div>
+                    </div>
+                    <div class="app-menu-actions">
+                      <button class="app-action-btn edit">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                      </button>
+                      <button class="app-action-btn delete">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="app-menu-item">
+                    <div class="app-menu-img">
+                      <svg viewBox="0 0 40 40">
+                        <rect width="40" height="40" fill="#FFF5F7" rx="8"/>
+                        <path d="M 8 28 L 30 28 L 26 14 Z" fill="#F8BBD0"/>
+                        <path d="M 8 28 L 30 28 L 28 24 L 10 24 Z" fill="#E91E63"/>
+                        <path d="M 10 24 L 28 24 L 27 20 L 12 20 Z" fill="#F8BBD0"/>
+                        <path d="M 12 20 L 27 20 L 26 16 L 14 16 Z" fill="#E91E63"/>
+                        <path d="M 14 16 L 26 16 L 26 14 Q 20 12 14 16 Z" fill="#FFEB3B" opacity="0.3"/>
+                        <path d="M 8 28 Q 20 30 30 28 L 30 29 Q 20 31 8 28 Z" fill="#C2185B"/>
+                        <circle cx="20" cy="11" r="3.5" fill="#D32F2F"/>
+                        <path d="M 20 9 Q 23 4 25 6" stroke="#4CAF50" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="app-menu-info">
+                      <div class="app-menu-name">Cake</div>
+                      <div class="app-menu-cat">General</div>
+                      <div class="app-menu-price">₹30.0</div>
+                    </div>
+                    <div class="app-menu-actions">
+                      <button class="app-action-btn edit">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                      </button>
+                      <button class="app-action-btn delete">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="app-menu-item">
+                    <div class="app-menu-img">
+                      <svg viewBox="0 0 40 40">
+                        <rect width="40" height="40" fill="#FAF5F0" rx="8"/>
+                        <ellipse cx="20" cy="30" rx="14" ry="3" fill="#E0D7D0" stroke="#CBBFB7" stroke-width="1"/>
+                        <path d="M 11 16 L 29 16 C 29 16, 28 28, 20 28 C 12 28, 11 16, 11 16 Z" fill="#FFFFFF" stroke="#D7CCC8" stroke-width="1"/>
+                        <path d="M 29 18 C 33 18, 33 24, 29 24" stroke="#D7CCC8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <ellipse cx="20" cy="16.5" rx="8" ry="1.5" fill="#8D6E63"/>
+                        <path d="M 16 11 Q 18 8 16 6" stroke="#B0BEC5" stroke-width="1" fill="none" stroke-linecap="round"/>
+                        <path d="M 20 12 Q 22 9 20 7" stroke="#B0BEC5" stroke-width="1" fill="none" stroke-linecap="round"/>
+                        <path d="M 24 11 Q 26 8 24 6" stroke="#B0BEC5" stroke-width="1" fill="none" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="app-menu-info">
+                      <div class="app-menu-name">Tea</div>
+                      <div class="app-menu-cat">General</div>
+                      <div class="app-menu-price">₹15.0</div>
+                    </div>
+                    <div class="app-menu-actions">
+                      <button class="app-action-btn edit">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                      </button>
+                      <button class="app-action-btn delete">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="app-btn-large">+ Add Menu Item</button>
+              </div>
+            </div>
+
+            <!-- Screen 5: Settings -->
+            <div class="app-screen" id="screen-settings" style="display: none;">
+              <div class="app-header">
+                <div class="app-title-row">
+                  <h3>Settings</h3>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6c757d" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                </div>
+              </div>
+              
+              <div class="app-content" style="padding: 10px;">
+                <div class="app-settings-card">
+                  <div class="app-settings-header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    Restaurant Information
+                  </div>
+                  
+                  <div class="app-form-group">
+                    <label>Restaurant Name</label>
+                    <input type="text" class="app-input" value="Tea Point POS">
+                  </div>
+                  
+                  <div class="app-form-group">
+                    <label>Address</label>
+                    <input type="text" class="app-input" value="12 b">
+                  </div>
+
+                  <div class="app-form-group">
+                    <label>Phone</label>
+                    <input type="text" class="app-input" value="+91 98765 43210">
+                  </div>
+
+                  <div class="app-form-group">
+                    <label>Email</label>
+                    <input type="text" class="app-input" value="store@teapointpos.com">
+                  </div>
+
+                  <div class="app-form-group">
+                    <label># FSSAI Number (Optional)</label>
+                    <input type="text" class="app-input" placeholder="Enter FSSAI license number">
+                  </div>
+                  
+                  <button class="app-btn-large" style="margin-top: 8px; width: 100%;">Save</button>
+                </div>
+                
+                <div class="app-settings-card" style="padding: 12px 16px;">
+                  <div class="app-settings-header" style="margin-bottom: 6px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="18" x2="15" y2="18"></line></svg>
+                    Table Management
+                  </div>
+                  <p style="font-size: 0.65rem; color: #868e96; line-height: 1.4;">Set 0 to disable Dine-in. Maximum 10 tables.</p>
+                </div>
+
+                <div class="app-btn-logout">Logout</div>
+              </div>
+              
+              <div class="app-nav">
+                <div class="app-nav-item" data-screen="home">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  <span>Home</span>
+                </div>
+                <div class="app-nav-item" data-screen="bills">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
+                  <span>Bills</span>
+                </div>
+                <div class="app-nav-item" data-screen="orders">
+                  <div class="badge">1</div>
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  <span>Orders</span>
+                </div>
+                <div class="app-nav-item">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  <span>Reports</span>
+                </div>
+                <div class="app-nav-item active" data-screen="settings">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                  <span>More</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Callouts centered around phone during scroll -->
+          <div class="scroll-callouts-container">
+            <div class="scroll-callout" id="callout-home">
+              <span class="callout-tag">Operations Dashboard</span>
+              <h3>Overview at a Glance</h3>
+              <p>Check sales stats, open bills, and launch new orders instantly from a clean home command board.</p>
+            </div>
+            <div class="scroll-callout" id="callout-bills">
+              <span class="callout-tag">Tables & Billing</span>
+              <h3>Visual Table Layout</h3>
+              <p>Tap tables to open tickets, split checks, and coordinate seating layouts with zero delays.</p>
+            </div>
+            <div class="scroll-callout" id="callout-orders">
+              <span class="callout-tag">Order Tracking</span>
+              <h3>Real-Time Order Queue</h3>
+              <p>Track order entries, log custom payment methods, and print bills instantly with built-in Bluetooth thermal printer support.</p>
+            </div>
+            <div class="scroll-callout" id="callout-menu">
+              <span class="callout-tag">Item Management</span>
+              <h3>Quick Menu Setup</h3>
+              <p>Edit prices, adjust category tagging, and organize food item catalogs dynamically in the palm of your hand.</p>
+            </div>
+            <div class="scroll-callout" id="callout-settings">
+              <span class="callout-tag">Store Configurations</span>
+              <h3>Flexible Local Settings</h3>
+              <p>Adjust tax headers, set phone contacts, manage table ranges, and handle configurations offline.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Core Features</span>
+        <h2 class="section-title">Designed for Fast-Paced Operations</h2>
+        <p class="section-desc">We removed the complexity of traditional POS machines. Biscuit gives you everything to run your store in a layout designed specifically for one-handed mobile use.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+          </div>
+          <h3>Visual Table Grid</h3>
+          <p>Instantly see which tables are occupied, billed, or free. Color-coded borders keep your staff coordinated during rush hours.</p>
+        </div>
+
+        <div class="feature-card success">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="12" y1="10" x2="12" y2="18"></line><line x1="8" y1="14" x2="16" y2="14"></line></svg>
+          </div>
+          <h3>Quick Order Queue</h3>
+          <p>Easily split orders, manage parcel versus dine-in status, and print bills. Fully compatible with portable Bluetooth receipt printers.</p>
+        </div>
+
+        <div class="feature-card info">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+          </div>
+          <h3>Live Revenue Reports</h3>
+          <p>Track daily orders, total sales revenue, and weekly/monthly performance targets straight from the app dashboard.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper" style="background-color: var(--primary-light); color: var(--primary);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          </div>
+          <h3>Dynamic Menu Setup</h3>
+          <p>Add products, configure categories, assign pricing structures, and attach product graphics locally in just a few taps.</p>
+        </div>
+
+        <div class="feature-card success">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
+          <h3>Flexible Configurations</h3>
+          <p>Modify restaurant details, tax headers, contact numbers, table quantity limits, and manage manual backups offline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Privacy Banner -->
+  <section class="section info-banner" id="security">
+    <div class="container info-grid">
+      <div class="info-img">
+        <div class="info-img-card">
+          <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="180" height="130" rx="15" fill="#f8f9fa" stroke="#e9ecef" stroke-width="4"/>
+            <rect x="75" y="60" width="50" height="40" rx="6" fill="#ff7a00" />
+            <path d="M85 60V45a15 15 0 0 1 30 0v15" stroke="#ff7a00" stroke-width="6" fill="none"/>
+            <circle cx="100" cy="80" r="4" fill="#fff" />
+            <path d="M100 84v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="info-content">
+        <span class="section-tag">Privacy & Security First</span>
+        <h2>Your Business Data Remains Yours. Period.</h2>
+        <p>BiscuitPOS is built offline-first. Your menus, billing lists, revenue logs, and client databases are kept locally on your device.</p>
+        <ul class="info-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>No internet connection required for billing or table operations.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>No external server sync unless you explicitly trigger backups.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>100% compliant with standard store privacy policies.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="section container" id="download">
+    <div class="download-cta">
+      <h2>Transform Your Food Service Business</h2>
+      <p>Download BiscuitPOS today and experience modern, minimalist order management. Free to get started.</p>
+      
+      <div class="badge-row">
+        <a href="#" class="download-badge">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.75.8.01 1.98-.77 3.56-.63 1.6.14 2.81.79 3.53 1.89-3.28 2-2.5 6.47.67 7.79-.67 1.7-1.46 3.4-2.84 3.17zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.22 2.5-2.11 4.42-3.74 4.25z"/>
+          </svg>
+          <div class="badge-text">
+            <span>Download on the</span>
+            <span>App Store</span>
+          </div>
+        </a>
+        <a href="#" class="download-badge">
+          <img src="google-play-icon.png" alt="Google Play">
+          <div class="badge-text">
+            <span>Get it on</span>
+            <span>Google Play</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg class="logo-svg" width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="bite-mask-footer">
+              <rect width="40" height="40" fill="white"/>
+              <circle cx="33" cy="13" r="7" fill="black"/>
+              <circle cx="33" cy="23" r="7" fill="black"/>
+              <circle cx="35" cy="18" r="6" fill="black"/>
+            </mask>
+            <circle cx="18" cy="18" r="16" fill="#B07D50" mask="url(#bite-mask-footer)"/>
+            <circle cx="10" cy="14" r="1.5" fill="#5D3A1B"/>
+            <circle cx="12" cy="22" r="1.5" fill="#5D3A1B"/>
+            <circle cx="18" cy="11" r="1.5" fill="#5D3A1B"/>
+            <circle cx="21" cy="24" r="1.5" fill="#5D3A1B"/>
+            <circle cx="23" cy="17" r="1.5" fill="#5D3A1B"/>
+            <circle cx="15" cy="17" r="1.5" fill="#5D3A1B"/>
+            <circle cx="36" cy="10" r="1" fill="#B07D50"/>
+            <circle cx="37" cy="22" r="1" fill="#B07D50"/>
+            <circle cx="38" cy="16" r="0.75" fill="#B07D50"/>
+          </svg>
+          <span class="logo-text">Biscuit<span class="logo-pos">POS</span></span>
+        </a>
+        <p>A fast, sleek, and minimalist POS system designed to run entirely from your mobile devices. Crafted specifically for bakeries, cafes, and food services.</p>
+      </div>
+      <div class="footer-links-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#scroll-story">Product Story</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#security">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Legal & Support</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="mailto:support@biscuit.pos">support@biscuit.pos</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 BiscuitPOS. All rights reserved.</p>
+      <p>Designed and developed by <a href="https://thinkforgeglobal.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">Think Forge Global</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
