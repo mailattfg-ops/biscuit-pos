@@ -41,12 +41,43 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.remove('active');
       }
     });
+
+    // Sync mobile navigation tab buttons
+    const mobileTabBtns = document.querySelectorAll('.mobile-tab-btn');
+    mobileTabBtns.forEach(btn => {
+      if (btn.getAttribute('data-screen') === screenId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // Sync mobile description cards
+    const mobileDescCards = document.querySelectorAll('.mobile-desc-card');
+    mobileDescCards.forEach(card => {
+      if (card.id === `mobile-desc-${screenId}`) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
   }
 
   // Interactive controls inside simulator (manual tap backups)
   appNavItems.forEach(item => {
     item.addEventListener('click', () => {
       const screenId = item.getAttribute('data-screen');
+      if (screenId) {
+        forceSwitchScreen(screenId);
+      }
+    });
+  });
+
+  // Mobile simulator interactive tab clicks
+  const mobileTabBtns = document.querySelectorAll('.mobile-tab-btn');
+  mobileTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const screenId = btn.getAttribute('data-screen');
       if (screenId) {
         forceSwitchScreen(screenId);
       }
@@ -208,21 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // Mobile Viewport Settings (No translates, scale stays crisp 1.0)
       heroText.style.opacity = '1';
       heroText.style.transform = 'none';
-      simulatorWrapper.style.transform = 'scale(0.9)';
+      simulatorWrapper.style.transform = 'none';
       simulatorWrapper.style.opacity = '1';
-
-      // Simple mobile scroll distribution (5 screen stages)
-      if (progress <= 0.2) {
-        forceSwitchScreen('home');
-      } else if (progress > 0.2 && progress <= 0.4) {
-        forceSwitchScreen('bills');
-      } else if (progress > 0.4 && progress <= 0.6) {
-        forceSwitchScreen('orders');
-      } else if (progress > 0.6 && progress <= 0.8) {
-        forceSwitchScreen('menu');
-      } else {
-        forceSwitchScreen('settings');
-      }
     }
   }
 
