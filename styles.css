@@ -1569,7 +1569,7 @@ footer {
 @media (max-width: 1024px) {
   .scroll-story-container {
     height: auto !important;
-    padding: 100px 0 60px;
+    padding: 120px 0 60px; /* Increased top padding to clear header */
     overflow: hidden;
   }
   .sticky-viewport {
@@ -1591,6 +1591,9 @@ footer {
     transform: none !important;
     opacity: 1 !important;
     margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .scroll-indicator-hint {
     display: none;
@@ -1751,8 +1754,8 @@ footer {
     padding: 30px 20px;
   }
   .device-frame {
-    width: 290px;
-    height: 590px;
+    width: min(300px, 90vw);
+    height: 600px;
     border-radius: 32px;
     border-width: 8px;
   }
